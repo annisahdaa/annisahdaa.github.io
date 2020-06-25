@@ -1,44 +1,89 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-
 <head>
-    <title>FOODIE LAND</title>
-        <style>
-<link href="https://fonts.googleapis.com/css2?family=Contrail+One&family=Notable&family=Sriracha&display=swap" rel="stylesheet">
-    body {
-            background-color: rgb(224, 164, 103);
-         }
-         
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+.mySlides1, .mySlides2 {display: none}
+img {vertical-align: middle;}
 
-         h1 {
-            color: rgb(51, 44, 44); 
-            #content
-            width: 100px;
-            background-color:rgb(255, 204, 204)
-         }
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
 
-      </style>
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover, .next:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+</style>
 </head>
-
 <body>
 
-    <ul>
-        <li><a href="#AboutMe">About Me</a></li>
-        <li><a href="#My Recipes">My Recipes</a></li>
-        <li><a href="#Contact">Contact</a></li>
-      </ul>
+<h2 style="text-align:center">Welcome to Foodie Land!</h2>
 
-    <div>
-    <h1 style="color:brown;text-align:center;font-family:'Notable', sans-serif;">Welcome To Foodie Land!</h1>
-    <img src="https://www.helpguide.org/wp-content/uploads/table-with-grains-vegetables-fruit-768.jpg" alt="yummy" height="421" width="728" style="display: block; margin: auto;">
-    </div>
+<div class="slideshow-container">
+  <div class="mySlides1">
+    <img src="https://www.helpguide.org/wp-content/uploads/table-with-grains-vegetables-fruit-768.jpg" style="width:100%">
+  </div>
 
-    <div>
-        <h1 style="color:brown;text-align:left;font-family: 'Sriracha', cursive;">About Me</h1>
-        <img src="https://mail.google.com/mail/u/5?ui=2&ik=ac8f300626&attid=0.1&permmsgid=msg-f:1670372589103821946&th=172e5b051015347a&view=fimg&sz=s0-l75-ft&attbid=ANGjdJ_TtkyPf8fBjoNmgty_b-HCa5nqqlOuW_4biXRbR6o5_OYyY51rQ5SW_Xlf7Nbs3C4dwNpRSnAis2rsaJDttX1qiHlsKwGCdagV1Zn0MIS5_1AY2bX6QBOCcnE&disp=emb&realattid=172e5afc37fb0674ba1" alt="yummy" height="150" width="150">
-        <p style="color:black;">Hi there! My name is Annisa Sahda.<br>I love cooking, baking, and listen to music.<br><strong>Here, I'll give you some delicious recipes!<strong>
-        </p>
-    </div>
+  <div class="mySlides1">
+    <img src="https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/publications/food-beverage-nutrition/beveragedaily.com/article/2020/01/02/2020-trends-to-watch-in-us-beverage/10484034-2-eng-GB/2020-trends-to-watch-in-US-beverage_wrbm_large.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides1">
+    <img src="https://www.helpguide.org/wp-content/uploads/fast-foods-candy-cookies-pastries-768.jpg" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+</div>
+<script>
+var slideIndex = [1,1];
+var slideId = ["mySlides1"]
+showSlides(1, 0);
+showSlides(1, 1);
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+function showSlides(n, no) {
+  var i;
+  var x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}    
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex[no]-1].style.display = "block";  
+}
+</script>
 
     <div>
         <h1  style="color:brown;text-align:left;font-family: 'Sriracha', cursive;">My Recipes</h2>
